@@ -60,8 +60,11 @@ while op != '0':
         plt.bar(range(len(hist)), hist)
 
         plt.show()
+        print("lore")
 
     else:
         print("\nOpción no valida, vuelve a intentarlo")
     
     op = int(input("\nPresiona '1' para mostrar las imagenes _\nPresiona '0' para salir _").strip())
+
+
