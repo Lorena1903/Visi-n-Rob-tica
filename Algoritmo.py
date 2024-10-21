@@ -20,8 +20,16 @@ for _ in range(150):
     mask = cv2.inRange(hsv,(45,80,80),(65,255,255))
     mask0 = 255-mask
     im2= cv2.bitwise_and(im, im, mask=mask0)
-    cv2.imshow('imagen', im2)
-    out.write(im2)
+
+    im_fondo = cv2.imread('fondo6.jpg')
+    h,w,_ = im.shape
+    im_fondo= cv2.resize(im_fondo, (w,h))
+    im3= cv2.bitwise_and(im_fondo, im_fondo, mask=mask)
+    im4= cv2.bitwise_or(im3, im2)
+
+
+    cv2.imshow('imagen', im4)
+    out.write(im4)
     cv2.waitKey(1)
     sleep(1/30)
 
